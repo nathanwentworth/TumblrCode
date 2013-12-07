@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+        <style type="text/css">
+            body {
+            font-family:Helvetica, sans serif;
+            color:#000000;
+        	}
+        	h1 {
+        	padding-top:30px;
+        	padding-left:30px;
+        	padding-bottom:-5px;
+        	}
+        	h2 {
+        	font-size:16px;
+        	padding-bottom:-5px;
+        	}
+        	li {
+        	padding-bottom:30px;
+        	}
+        	img {
+        	max-width:1000px;
+        	}
+        	ul {
+        	list-style-type:none;
+			margin-left:30px;
+			padding:0;
+			padding-top:0px;
+			padding-bottom:6px;
+			}
+			ul li {
+			display:inline;
+        	}
+        	ul a {
+			font-weight:bold;
+			color:#000000;
+			background-color:#ffffff;
+			text-align:center;
+			padding:6px;
+			padding-left:0px;
+			padding-top:-5px;
+			text-decoration:none;
+			text-transform:uppercase;	
+			}
+			a:hover {
+			color:#6666ff;
+			}
+            a {
+            color:#000000;
+            }
+            
+            ol li {
+            margin-left:-10px;
+            padding-left:-10px;
+            }
+        </style>
+        
+        
+    </head>
+    <body>
+    
+   	<h1>NathanWentworth</h1>
+	<ul>
+		<li><a href="http://nathanwentworth.tumblr.com/">Home</a></li>
+		<li><a href="http://nathanwentworth.tumblr.com/me">About</a></li>
+		<li><a href="http://nathanwentworth.tumblr.com/ask">Ask</a></li>
+		<li><a href="http://nathanwentworth.tumblr.com/myphotos">Photos</a></li>
+	</ul>
+
+        <ol id="posts">
+            {block:Posts}
+                {block:Text}
+                    <li class="post text">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        {Body}
+                    </li>
+                {/block:Text}
+
+                   {block:Photo}
+
+<div class="meta">
+      
+
+<h2>
+<a title="link to this post" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>
+</h2>
+      
+
+    </div><br>
+
+    <li class="content photo-post">
+      <div class="photo">
+        
+        {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
+        {block:PermalinkPage}{LinkOpenTag}{/block:PermalinkPage}
+          <img src="{block:IndexPage}{PhotoURL-HighRes}{/block:IndexPage}{block:PermalinkPage}{PhotoURL-HighRes}{/block:PermalinkPage}" alt="{PhotoAlt}">
+        {block:IndexPage}</a>{/block:IndexPage}
+        {block:PermalinkPage}{LinkCloseTag}{/block:PermalinkPage}
+        
+      </div>
+
+
+
+      {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+    </li>
+    {/block:Photo}
+                
+                {block:Photoset}
+                    <li class="post photoset">
+                        {Photoset-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote">
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link">
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video">
+                        {Video-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio">
+                        {AudioPlayerBlack}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+            {/block:Posts}
+        </ol>
+
+        <p id="footer">
+            {block:PreviousPage}
+                <a href="{PreviousPage}">&#171; Previous</a>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+                <a href="{NextPage}">Next &#187;</a>
+            {/block:NextPage}
+
+        </p>
+    </body>
+</html>

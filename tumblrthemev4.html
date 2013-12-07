@@ -1,0 +1,452 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+        <style>
+            body {
+                position:absolute;
+                top:100px;
+                font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+                font-weight: 300;
+                font-size:15px;
+                background-color:#eee;
+                max-width:900px;
+                padding-right:40px;
+            }
+            table.nextprevpage {
+                padding-left:40px;
+            }
+            div.toptitle {
+                width:10000px;
+                max-width:200%;
+                padding-left:65px;
+                margin:0 auto;
+                font-size:40px;
+                color:#eeeeee;
+
+            }
+            div.toptitlebox {
+                width:10000px;
+                max-width:200%;
+                position:fixed;
+                top:0px;
+                left:-20px;
+                height:85px;
+                background-color:rgba(51,51,51,0.4)
+            }
+            a.headerlinks {
+            	font-size:40px;
+            	text-decoration:none;
+            	color:#eeeeee;
+            }
+            a.headerlinks:link {color:#eee;}    /* unvisited link */
+    		a.headerlinks:visited {color:#eee;} /* visited link */
+			a.headerlinks:hover {color:#eee;}   /* mouse over link */
+			a.headerlinks:active {color:#eee;}  /* selected link */
+
+            a {
+                font-size:14px;
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                transition:.5s;
+            }
+            a.dateposted {
+                font-family:"Lucida Console", Monaco, monospace;
+                font-size:10px;
+                color:#6a6a6a;
+                vertical-align:bottom;
+                text-decoration:none;
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                transition:.5s;
+            }
+            a.dateposted:link {color:#6a6a6a;}    /* unvisited link */
+			a.dateposted:visited {color:#6a6a6a;} /* visited link */
+			a.dateposted:hover {color:#73D7C1;}   /* mouse over link */
+			a.dateposted:active {color:#73D7C1;}  /* selected link */
+            
+            a.originlink {
+                font-family:"Lucida Console", Monaco, monospace;
+                font-size:9px;
+                color:#6a6a6a;
+                vertical-align:bottom;
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                transition:.5s;
+            }
+            a.originlink:link {color:#6a6a6a;}    /* unvisited link */
+    		a.originlink:visited {color:#6a6a6a;} /* visited link */
+			a.originlink:hover {color:#73D7C1;}   /* mouse over link */
+			a.originlink:active {color:#73D7C1;}  /* selected link */
+            
+            span.originlink {
+                float:right;
+                padding-left:25px;
+                font-family:"Lucida Console", Monaco, monospace;
+                font-size:9px;
+                color:#6a6a6a;
+                vertical-align:bottom;
+            }
+            
+            a.dateposted:link {color:#6a6a6a;}    /* unvisited link */
+    		a.dateposted:visited {color:#6a6a6a;} /* visited link */
+			a.dateposted:hover {color:#73D7C1;}   /* mouse over link */
+			a.dateposted:active {color:#73D7C1;}  /* selected link */
+            
+        	a:link {color:#f98597;}    /* unvisited link */
+			a:visited {color:#f98597;} /* visited link */
+			a:hover {color:#73D7C1;}   /* mouse over link */
+			a:active {color:#73D7C1;}  /* selected link */
+			ul {
+                list-style-type: none;
+			    font-family:"Helvetica";
+			font-size:14px;
+			}
+            li {
+                list-style-type: none;
+    		font-size:15px;
+            }
+        	p {
+    		font-size:15px;
+        	}
+            
+            p.o1 {
+                padding-left:40px;
+                
+            }
+            p.footer a {
+                padding-left:40px;
+            }
+            div.tags {
+                font-size:10px;
+                color:#6a6a6a;
+                float:right;
+                vertical-align:bottom;
+            }
+            span.tags {
+                font-size:10px;
+                color:#6a6a6a;
+                float:right;
+            }
+            span.postnotes {
+                padding-left:25px;
+                font-family:"Lucida Console", Monaco, monospace;
+                font-size:10px;
+                color:#6a6a6a;
+                vertical-align:bottom;
+            }
+            div.postnotes {
+                padding-left:25px;
+                font-family:"Lucida Console", Monaco, monospace;
+                font-size:11px;
+                color:#6a6a6a;
+                vertical-align:top;
+            }
+            img {
+                width:100%;
+                max-width:900px;
+            }
+            img.imgheader {
+            	width:100%;
+            	height:100%;
+            	max-height:60px;
+            }
+        	.caption {
+        		color:343434;
+        		font-size:12px;
+        	}
+            .post {
+                padding-top:15px;
+                padding-bottom:15px;
+            }
+            a.tag {
+                float:right;
+                text-align:right;
+                padding-left:5px;
+                font-family:"Lucida Console", Monaco, monospace;
+                font-size:10px;
+                color:#6a6a6a;
+                vertical-align:bottom;
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                transition:.5s;
+            }
+            a.tag:link {color:#6a6a6a;}    /* unvisited link */
+			a.tag:visited {color:#6a6a6a;} /* visited link */
+			a.tag:hover {color:#73D7C1;}   /* mouse over link */
+			a.tag:active {color:#73D7C1;}  /* selected link */
+            a.source {
+                float:left;
+                text-align:left;
+                padding-left:5px;
+                font-family:"Lucida Console", Monaco, monospace;
+                font-size:9px;
+                color:#6a6a6a;
+                vertical-align:bottom;
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                transition:.5s;
+            }
+            a.source:link {color:#6a6a6a;}    /* unvisited link */
+    		a.source:visited {color:#6a6a6a;} /* visited link */
+			a.source:hover {color:#73D7C1;}   /* mouse over link */
+			a.source:active {color:#73D7C1;}  /* selected link */
+            a.link {
+                font-size:30px;
+                padding-left:40px;
+            }
+            p.exif {
+                font-family:"Lucida Console", Monaco, monospace;
+                color:#6a6a6a;
+                font-size:10px;
+}
+            p.playcount {
+                font-family:"Lucida Console", Monaco, monospace;
+                color:#6a6a6a;
+                font-size:10px;
+            }
+            table.datetags {
+                width:"100%";
+                max-width:"900px";
+                padding-top:0px;
+                padding-left:0px;
+            }
+            li.quote {
+                font-size:35px;
+            }
+            .divider {
+                width:500px;
+                text-align:center;
+            }
+
+            .divider hr {
+                margin-left:auto;
+                margin-right:auto;
+                width:40%;
+
+            }
+            
+            
+            /* NOTES */
+            ol.notes {
+                padding: 0px;
+                margin: 25px 0px;
+                list-style-type: none;
+                border-bottom: solid 1px #ccc;
+            }
+
+            ol.notes li.note {
+                border-top: solid 1px #ccc;
+                padding: 10px;
+            }
+
+            ol.notes li.note img.avatar {
+                vertical-align: -4px;
+                margin-right: 10px;
+                width: 0px;
+                height: 0px;
+            }
+
+            ol.notes li.note span.action {
+                font-weight: bold;
+            }
+
+            ol.notes li.note .answer_content {
+                font-weight: normal;
+            }
+
+            ol.notes li.note blockquote {
+                border-color: #eee;
+                padding: 4px 10px;
+                margin: 10px 0px 0px 25px;
+            }
+
+            ol.notes li.note blockquote a {
+                text-decoration: none;
+            }
+            
+            
+            /* Inset, by Dan Eden */
+            hr.style-six {
+                border: 0;
+                height: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+    	</style>
+    </head>
+    <body>
+
+    <div class="toptitlebox" style="display:table;overflow:hidden;"><div style="display:table-cell;vertical-align:middle;" class="toptitle"><a class="headerlinks" href="http://nathanwentworth.tumblr.com/">NathanWentworth</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/me">About</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/myphotos/">Photos</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/ask/">Ask</a></div></div>
+        <ol id="posts">
+            {block:Posts}
+                {block:Text}
+                    <li class="post text">
+                        {block:Title}
+                            <h3><a href="{Permalink}" style="padding-left:40px;font-size:30px;">{Title}</a></h3>
+                        {/block:Title}
+
+                        {Body}
+                    </li>
+                {/block:Text}
+
+                {block:Photo}
+                    <li class="post photo">
+                        <img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>
+                        {block:Exif}
+            
+                <p class="exif">{block:Camera}{Camera}{/block:Camera} -             {block:Aperture}{Aperture}{/block:Aperture}
+ - {block:Exposure}{Exposure}{/block:Exposure} - {block:FocalLength}{FocalLength}{/block:FocalLength}
+                        {/block:Exif}
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photo}
+
+                {block:Panorama}
+                    <li class="post panorama">
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                        {LinkCloseTag}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Panorama}
+
+                {block:Photoset}
+                    <li class="post photoset">
+                        {Photoset-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photoset}
+
+                {block:Quote}
+                    <li class="post quote">
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source" style="font-size:14px;padding-left:40px;padding-top:10px;">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}
+
+                {block:Link}
+                    <li class="post link">
+                        <a href="{URL}" class="link" {Target}>&#8618; {Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}
+
+                {block:Chat}
+                    <li class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}
+
+                {block:Video}
+                    <li class="post video">
+                        {Video-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}
+
+                {block:Audio}
+                    <li class="post audio"><span>{block:AlbumArt}<img style="max-width:500px;max-height:500px;height:100%;width:100%;" src={AlbumArtURL}>{/block:AlbumArt}</span>
+                        <span>{AudioPlayer}</span>
+                        <p class="playcount">{block:PlayCount}{PlayCountWithLabel}{/block:PlayCount}</p>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+<div>
+<span style="float:left;padding-left:40px;display:inline;"><a href="{Permalink}" class="dateposted">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} — {12HourWithZero}:{Minutes}{AmPm}</a></span> 
+
+                {block:NoteCount}
+                <span style="display:inline;" class="postnotes">
+                {NoteCountWithLabel}
+                </span>{/block:NoteCount}
+
+                   {block:HasTags}
+                    
+            <span style="display:inline;" class="tags">{block:Tags}
+                                <a href="{TagURL}" class="tag">#{Tag}</a>
+                        {/block:Tags}
+                    </span>
+                    <span style="display:inline;" class="tags"><img src="http://f.cl.ly/items/1Y2l27322j1f1F0U1j1b/iconmonstr-tag-icon.png" style="height:15px;width:15px;"></span>
+                {/block:HasTags}
+</div>
+<div style="text-size:10px;">
+ 
+{block:ContentSource}<span class="originlink">Source: <a class="originlink" href="{SourceURL}">{SourceTitle}</a></span> {/block:ContentSource}   
+
+{block:RebloggedFrom}<span class="originlink">Originally posted by  <a class="originlink" href="{ReblogRootURL}">{ReblogRootName}</a></span> {/block:RebloggedFrom}
+
+{block:RebloggedFrom}<span class="originlink">Reblogged from  <a class="originlink" href="{ReblogParentURL}">{ReblogParentName}</a></span> {/block:RebloggedFrom}
+
+                <br><br><br>
+                <hr style="style-six">
+                {block:PostNotes}{PostNotes}{/block:PostNotes}
+                <br><br><br>
+
+                
+            {/block:Posts}
+        </ol>
+
+        <p id="footer">
+        <table class="nextprevpage">
+            <tr><td>{block:PreviousPage}
+                <a href="{PreviousPage}" style="font-size:24px;padding-right:30px;">« Previous Page</a>
+            {/block:PreviousPage}</td>
+
+            <td>{block:NextPage}
+                <a href="{NextPage}" style="font-size:24px;">Next Page »</a>
+            {/block:NextPage}</td></tr>
+            </table>
+
+            <br><br><a href="/archive" target="_blank" style="padding-left:42px;padding-bottom:40px;font-size:24px;">» Archive «</a>
+        </p>
+    </body>
+</html>
