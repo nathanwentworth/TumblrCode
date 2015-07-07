@@ -1,0 +1,274 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+        <style type="text/css">
+            /*! normalize.css v1.0.0 | MIT License | git.io/normalize */
+            article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 4%;max-width:100%;}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:75%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+            /*Mobile Screens*/
+
+            @media all and (max-width: 599px) and (min-width: 320px) {
+                body{
+                    margin:25px auto;
+                    font-size: 18px;
+                    width: 90%;
+                }
+                .headline {
+                    padding:25px 0;
+                }
+                #mainnotes {
+                    padding-bottom: 50px;
+                }
+
+            }
+
+            /*Medium Screens*/
+
+            @media all and (max-width: 959px) and (min-width: 600px) {
+                body{
+                    margin:75px;
+                    font-size: 16px;
+                    width:75%;
+                }
+                .headline {
+                    padding:35px 0;
+                }
+                #mainnotes {
+                    padding-bottom: 75px;
+                }
+
+            }
+
+            /*Large Screens*/
+
+            @media all and (min-width: 960px) {
+                body{
+                    margin:125px;
+                    font-size: 18px;
+                    width: 60%;
+                }
+                .headline {
+                    padding:50px 0;
+                }
+                #mainnotes {
+                    padding-bottom: 100px;
+                }
+
+
+            }
+
+            /*Universal*/
+
+            body {
+                color:#333;
+                background:#EEE;
+            }
+            .bloglink {
+                font-size:2em;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            #header {
+                color:#333;
+            }
+            #description {
+                font-size:1.1em;
+            }
+            .line {
+                border-top: 1px;
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 0;
+                border-style: solid;
+                border-color: #6a6a6a;
+                height: 1px;
+                width:auto;
+            }
+            #content {
+                width: 100%;
+            }
+            #mainnotes {
+                font-size: .75em;
+            }
+            .sourceclick {
+                cursor: pointer;
+            }
+            .sourceblock {
+                display:none;
+            }
+            img {
+                max-width: 500px;
+            }
+            .caption {
+                max-width: 500px;
+            }
+            .post {
+                max-width: 500px;
+            }
+            li {
+                list-style:none;
+            }
+            a {
+                -o-transition:.5s;-ms-transition:.5s;-moz-transition:.5s;-webkit-transition:.5s;transition:.5s;
+            }
+
+
+            a:link {color:#eb470a;}   
+            a:visited {color:#eb470a;}
+            a:hover {color:#992e07;}  
+            a:active {color:#992e07;position:relative;top:2px;} 
+
+            .grey a:link {color:#8a8a8a;}   
+            .grey a:visited {color:#8a8a8a;}
+            .grey a:hover {color:#333;}  
+            .grey a:active {color:#333;position:relative;top:2px;} 
+
+        </style>
+    </head>
+
+    <body>
+    <div id="header">
+        <a class="bloglink" href="{BlogURL}">{Title}</a>
+
+        {block:Description}
+            <p id="description">{Description}</p>
+        {/block:Description}
+    </div>
+    <div class="line headline"></div>
+    <div id="content">
+        <ol id="posts">
+            {block:Posts}{block:Text}
+                    <li class="post text">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}{Body}
+                    </li>
+                {/block:Text}{block:Photo}
+                    <li class="post photo">
+                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photo}{block:Panorama}
+                    <li class="post panorama">
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                        {LinkCloseTag}{block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Panorama}{block:Photoset}
+                    <li class="post photoset">
+                        {Photoset-500}{block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Photoset}{block:Quote}
+                    <li class="post quote">
+                        "{Quote}"
+
+                        {block:Source}
+                            <div class="source">{Source}</div>
+                        {/block:Source}
+                    </li>
+                {/block:Quote}{block:Link}
+                    <li class="post link">
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </li>
+                {/block:Link}{block:Chat}
+                    <li class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}{Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </li>
+                {/block:Chat}{block:Video}
+                    <li class="post video">
+                        {Video-500}{block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Video}{block:Audio}
+                    <li class="post audio">
+                        {AudioEmbed}{block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </li>
+                {/block:Audio}
+
+                <div class="grey" id="mainnotes">
+                    <p><span><a href="{Permalink}">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} — {12HourWithZero}:{Minutes}{AmPm}</a></span>
+                    {block:NoteCount}
+                    <span style="float:right">{NoteCountWithLabel}</span>
+                    {/block:NoteCount}</p>
+                    
+                    
+
+                    {block:HasTags}<p>{block:Tags}
+                    <a href="{TagURL}">#{Tag}</a>
+                    {/block:Tags}</p>
+                    {/block:HasTags}
+
+                    <div class="sourceclick"><p>source</p>
+                    
+                    <div class="sourceblock">{block:ContentSource}<p>source: <a href="{SourceURL}">{SourceTitle}</a></p> {/block:ContentSource}   
+
+                    {block:RebloggedFrom}<p>original: <a href="{ReblogRootURL}">{ReblogRootName}</a></p>
+
+                    <p>from: <a href="{ReblogParentURL}">{ReblogParentName}</a></p> {/block:RebloggedFrom}</div></div>
+
+                <div class="line"></div>
+                </div>
+
+
+                </div>
+
+                {/block:Posts}
+        </ol>
+    </div>
+    <div id="footer">
+        <p id="footerp">
+            {block:PreviousPage}
+                <a href="{PreviousPage}">&#171; Previous</a>
+            {/block:PreviousPage}{block:NextPage}
+                <a href="{NextPage}">Next &#187;</a>
+            {/block:NextPage}
+
+            <a href="/archive">Archive</a>
+        </p>
+    </div>
+
+        <script>
+        $(document).ready(function(){
+            $( ".sourceclick").click(function(){
+                $(this).find(".sourceblock").toggle(400);
+            });
+        });
+        </script>
+
+    </body>
+</html>

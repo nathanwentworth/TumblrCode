@@ -15,20 +15,17 @@
                 font-weight: 300;
                 font-size:15px;
                 background-color:#eee;
-                max-width:900px;
+                max-width:700px;
                 padding-right:40px;
             }
             table.nextprevpage {
                 padding-left:40px;
             }
             div.toptitle {
-                width:10000px;
-                max-width:200%;
                 padding-left:65px;
                 margin:0 auto;
                 font-size:40px;
                 color:#eeeeee;
-
             }
             div.toptitlebox {
                 width:10000px;
@@ -37,7 +34,7 @@
                 top:0px;
                 left:-20px;
                 height:85px;
-                background-color:rgba(51,51,51,0.4)
+                background-color:rgba(40,40,40,0.6)
             }
             a.headerlinks {
             	font-size:40px;
@@ -46,8 +43,8 @@
             }
             a.headerlinks:link {color:#eee;}    /* unvisited link */
     		a.headerlinks:visited {color:#eee;} /* visited link */
-			a.headerlinks:hover {color:#eee;}   /* mouse over link */
-			a.headerlinks:active {color:#eee;}  /* selected link */
+			a.headerlinks:hover {color:#fff;}   /* mouse over link */
+			a.headerlinks:active {color:#fff;}  /* selected link */
 
             a {
                 font-size:14px;
@@ -292,7 +289,7 @@
     </head>
     <body>
 
-    <div class="toptitlebox" style="display:table;overflow:hidden;"><div style="display:table-cell;vertical-align:middle;" class="toptitle"><a class="headerlinks" href="http://nathanwentworth.tumblr.com/">NathanWentworth</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/me">About</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/myphotos/">Photos</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/ask/">Ask</a></div></div>
+    <div class="toptitlebox" style="display:table;overflow:hidden;"><div style="display:table-cell;vertical-align:middle;" class="toptitle"><a class="headerlinks" href="http://nathanwentworth.tumblr.com/">NathanWentworth</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/me">About</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/myphotos/">Photos</a> // <a class="headerlinks" href="http://nathanwentworth.tumblr.com/archive/">Archive</a></div></div>
         <ol id="posts">
             {block:Posts}
                 {block:Text}
@@ -333,7 +330,7 @@
 
                 {block:Photoset}
                     <li class="post photoset">
-                        {Photoset-500}
+                        {Photoset}
 
                         {block:Caption}
                             <div class="caption">{Caption}</div>
@@ -392,8 +389,8 @@
                 {/block:Video}
 
                 {block:Audio}
-                    <li class="post audio"><span>{block:AlbumArt}<img style="max-width:500px;max-height:500px;height:100%;width:100%;" src={AlbumArtURL}>{/block:AlbumArt}</span>
-                        <span>{AudioPlayer}</span>
+                    <li class="post audio" style="z-index:-1"><span>{block:AlbumArt}<img style="max-width:500px;max-height:500px;height:100%;width:100%;" src={AlbumArtURL}>{/block:AlbumArt}</span>
+                        <span>{AudioEmbed}</span>
                         <p class="playcount">{block:PlayCount}{PlayCountWithLabel}{/block:PlayCount}</p>
 
                         {block:Caption}
@@ -426,10 +423,10 @@
 
 {block:RebloggedFrom}<span class="originlink">Reblogged from  <a class="originlink" href="{ReblogParentURL}">{ReblogParentName}</a></span> {/block:RebloggedFrom}
 
-                <br><br><br>
+                <br><br><br><br><br>
                 <hr style="style-six">
                 {block:PostNotes}{PostNotes}{/block:PostNotes}
-                <br><br><br>
+                <br><br><br><br><br>
 
                 
             {/block:Posts}
@@ -445,8 +442,6 @@
                 <a href="{NextPage}" style="font-size:24px;">Next Page »</a>
             {/block:NextPage}</td></tr>
             </table>
-
-            <br><br><a href="/archive" target="_blank" style="padding-left:42px;padding-bottom:40px;font-size:24px;">» Archive «</a>
         </p>
     </body>
 </html>

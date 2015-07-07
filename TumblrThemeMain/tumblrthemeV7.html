@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{Title}</title>
+		<link rel="shortcut icon" href="{Favicon}">
+		<link rel="alternate" type="application/rss+xml" href="{RSS}">
+		{block:Description}
+			<meta name="description" content="{MetaDescription}" />
+		{/block:Description}
+		<style type="text/css">
+			/*! normalize.css v1.0.0 | MIT License | git.io/normalize */
+			article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 4%;max-width:100%;}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:75%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+			
+			@media all and (min-width: 960px) {
+				body{
+					font-size: 18px;
+				}
+				#content {
+					width:70%;
+				}
+				ol {
+					padding-top:100px;
+				}
+				#subpost {
+					padding:25px 0 150px 0;
+				}
+			}
+			 
+			@media all and (max-width: 959px) and (min-width: 600px) {
+				body{
+					font-size: 16px;
+				}
+				#content {
+					width:80%;
+				}
+				ol {
+					padding-top:50px;
+				}
+				#subpost {
+					padding:25px 0 125px 0;
+				}
+			}
+			 
+			@media all and (max-width: 599px) and (min-width: 320px) {
+				body{
+					font-size: 18px;
+				}
+				.photoset-img {
+					width:90%;
+					max-width:100px;
+					height:auto;
+				}
+				.photosetdiv {
+					max-width:100%;
+				}
+				#content {
+					width:90%;
+				}
+				ol {
+					padding-top:25px;
+				}
+				#subpost {
+					padding:25px 0 100px 0;
+				}
+
+			}
+
+			html,
+			body {
+				margin:0;
+				padding:0;
+				height:100%;
+				background:#eee;
+				font-family: 'Monaco';
+				margin:auto;
+			}
+			#wrapper {
+				min-height:100%;
+				position:relative;
+			}
+			#headerback {
+				width:100%;
+				/* background:#f7c0d7; */
+				background: #eee url("http://static.tumblr.com/gvqbxzw/ybXn9rko6/p7318029-47_header.jpeg") fixed;
+				padding-top:120px;
+				padding-bottom:50px;
+			}
+			#header {
+				height: 75px;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+			}
+			#headdiv {
+				padding-top:110px;
+				padding-bottom:40px;
+			}
+			.headtitle {
+				font-family: 'Helvetica', sans-serif;
+				font-size:2.5em;
+				font-weight:bold;
+				text-decoration:none;
+				color:#333333;
+			}
+			a.headlinks {
+				font-size:1.25em;
+				text-decoration:none;
+				padding:0px 10px;
+				margin:auto;
+			}
+			.center {text-align:center;margin:auto;}
+
+			a {
+				-o-transition:.5s;-ms-transition:.5s;-moz-transition:.5s;-webkit-transition:.5s;transition:.5s;
+			}
+
+			.post a {background:#79EDD4;}   
+			.post a:link {color:#3a3a3a; background:#79EDD4;}   
+			.post a:visited {color:#3a3a3a; background:#79EDD4;}
+			.post a:hover {color:#000000; background:#79EDD4;}  
+			.post a:active {color:#000000; background:#79EDD4;} 
+
+			.greyhover {background:none;}
+			.greyhover:link {color:#6a6a6a;}
+			.greyhover:visited {color:#6a6a6a;}
+			.greyhover:hover {color:#000000;}  
+			.greyhover:active {color:#000000;} 
+
+			.titlehover {background:none;}
+			.titlehover:link {color:#333333;}
+			.titlehover:visited {color:#333333;}
+			.titlehover:hover {color:#000000;}  
+			.titlehover:active {color:#000000; position:relative;top:2px;} 
+
+			#content {
+				padding:10px;
+				padding-bottom:100px;   /* Height of the footer element */
+				max-width:700px;
+				margin:0 auto;
+			}
+			ul {
+				list-style-type: none;
+			}
+			ol {
+				/*padding-top:100px;*/
+			}
+			li {
+				list-style-type: none;
+				font-size:16px;
+			}
+			li.text {
+				line-height:175%;
+				text-align:justify;
+			}
+			li.photo img {
+				width:100%;
+				max-width:700px;
+				height:auto;
+			}
+			li.photoset {
+				width:100%;
+				max-width:700px;
+			}
+			div.exif {
+				font-size:.65em;
+				float:right;
+			}
+			a.link {
+				font-weight:bold;
+				font-size:45px;
+			}
+			.source {
+				font-size:.875em;
+				padding:10px 0px 0px 40px;
+			}
+			.caption {
+				padding-top:20px;
+				max-width:100%;
+			}
+			#subpost {
+				/*padding:25px 0px 150px 0px;*/
+			}
+			a.tag {
+				float:right;
+				padding-left:10px;
+				text-decoration:none;
+			}
+			span.tags {
+				float:right;
+			}
+			div.postnotes {
+				float:left;
+			}
+			a.dateposted {
+				float:left;
+			}
+			span.originlink {
+				float:right;
+				padding-left:25px;
+			}
+			.subpostinfo {
+				font-family:'Monaco';
+				font-size:.7em;
+				color:#6a6a6a;
+			}
+			li.video {
+				max-width:700px;
+			}
+			iframe {
+				max-width:100%;
+				margin:auto;
+			}
+			.photosetdiv {
+				max-width:100%;
+				margin:auto;
+			}
+			.audioembeddiv {
+				width: 30em;
+			}
+			#footer {
+				width:100%;
+				height:100px;
+				position:absolute;
+				bottom:0;
+				left:0;
+				background: #eee url("http://static.tumblr.com/gvqbxzw/ybXn9rko6/p7318029-47_header.jpeg") bottom center fixed;
+			}
+			div.foot {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				-webkit-transform: translateY(-50%);
+				margin:auto;
+			}
+			span.nextprev a {
+				font-size:2em;
+				text-decoration:none;
+				font-weight:bold;
+				padding:0px 25px;
+			}
+			/* NOTES */
+			ol.notes {
+				padding-top:50px;
+				margin: 25px 0px;
+				border-bottom: solid 1px #ccc;
+			}
+			ol.notes li.note {
+				border-top: solid 1px #ccc;
+				padding: 10px;
+			}
+			ol.notes li.note img.avatar {
+				vertical-align: -4px;
+				margin-right: 10px;
+				width: 0px;
+				height: 0px;
+			}
+			ol.notes li.note span.action {
+				font-size:.8em;
+				font-weight: normal;
+			}
+			ol.notes li.note .answer_content {
+				font-size:.8em;
+				font-weight: italic;
+			}
+			ol.notes li.note blockquote {
+				border-color: #eee;
+				padding: 4px 10px;
+				margin: 10px 0px 0px 25px;
+			}
+			ol.notes li.note blockquote a {
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="wrapper">
+		<div id="headerback">
+			<div id="header">
+				<div class="center"><a class="headtitle titlehover" href="http://nathanwentworth.tumblr.com/">{Title}</a></div>
+				<div class="center"><a class="headlinks titlehover" href="/me">About</a>
+				<a class="headlinks titlehover" href="/links" target="_blank">Links</a>
+				<a class="headlinks titlehover" href="/ask" target="_blank">Ask</a>
+				<a class="headlinks titlehover" href="/archive">Archive</a>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<ol id="posts">
+			{block:Posts}
+				{block:Text}
+					<li class="post text">
+						{block:Title}
+							<h3><a href="{Permalink}" style="font-size:1.8em;">{Title}</a></h3>
+						{/block:Title}
+
+						{Body}
+					</li>
+				{/block:Text}
+
+				{block:Photo}
+					<li class="post photo">
+						<a style="background:none;" href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
+						{block:Exif}
+							<div class="exif">{block:Camera}{Camera}{/block:Camera} - {block:Aperture}{Aperture}{/block:Aperture} - {block:Exposure}{Exposure}{/block:Exposure} - {block:FocalLength}{FocalLength}{/block:FocalLength}</div>
+						{/block:Exif}
+						{block:Caption}
+							<div class="caption">{Caption}</div>
+						{/block:Caption}
+					</li>
+				{/block:Photo}
+
+				{block:Panorama}
+					<li class="post panorama">
+						{LinkOpenTag}
+							<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+						{LinkCloseTag}
+
+						{block:Caption}
+							<div class="caption">{Caption}</div>
+						{/block:Caption}
+					</li>
+				{/block:Panorama}
+
+				{block:Photoset}
+					<li class="post photoset">
+							<div class="photosetdiv">{block:Photos}<a href="{permalink}"><img src="{PhotoURL-HighRes}" width="100%"></a>{/block:Photos}</div>
+						{block:Caption}
+							<div class="caption">{Caption}</div>
+						{/block:Caption}
+					</li>
+				{/block:Photoset}
+
+
+				{block:Quote}
+					<li class="post quote">
+						"{Quote}"
+
+						{block:Source}
+							<div class="source">{Source}</div>
+						{/block:Source}
+					</li>
+				{/block:Quote}
+
+				{block:Link}
+					<li class="post link">
+						<a href="{URL}" class="link" {Target}>&#8618; {Name}</a>
+
+						{block:Description}
+							<div class="description">{Description}</div>
+						{/block:Description}
+					</li>
+				{/block:Link}
+
+				{block:Chat}
+					<li class="post chat">
+						{block:Title}
+							<h3><a href="{Permalink}">{Title}</a></h3>
+						{/block:Title}
+
+						<ul class="chat">
+							{block:Lines}
+								<li class="{Alt} user_{UserNumber}">
+									{block:Label}
+										<span class="label">{Label}</span>
+									{/block:Label}
+
+									{Line}
+								</li>
+							{/block:Lines}
+						</ul>
+					</li>
+				{/block:Chat}
+
+				{block:Video}
+					<li class="post video">
+						{Video-700}
+						{block:Caption}
+							<div class="caption">{Caption}</div>
+						{/block:Caption}
+					</li>
+				{/block:Video}
+
+				{block:Audio}
+					<li class="post audio">
+						<div class="photosetdiv audioembeddiv">{AudioEmbed}</div>
+
+						{block:Caption}
+							<div class="caption">{Caption}</div>
+						{/block:Caption}
+					</li>
+				{/block:Audio}
+			<div id="subpost">
+				<div>
+					<span style="float:left;">
+					<a href="{Permalink}" class="dateposted subpostinfo greyhover">{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero} — {12HourWithZero}:{Minutes}{AmPm}</a>
+					</span> 
+
+					{block:HasTags}
+					<span class="tags">{block:Tags}
+					<a href="{TagURL}" class="tag subpostinfo greyhover">#{Tag}</a>
+					{/block:Tags}
+					</span>
+					{/block:HasTags}
+				</div>
+
+				{block:NoteCount}
+					<p style="padding-top:10px">
+						<div class="subpostinfo postnotes">
+							{NoteCountWithLabel}
+						</div>
+					</p>
+				{/block:NoteCount}
+
+				<div style="float:right;">
+					{block:ContentSource}<span class="subpostinfo originlink">Source: <a class=" greyhover" href="{SourceURL}">{SourceTitle}</a></span> {/block:ContentSource}   
+
+					{block:RebloggedFrom}<span class="subpostinfo originlink">Original: <a class=" greyhover" href="{ReblogRootURL}">{ReblogRootName}</a></span> {/block:RebloggedFrom}
+
+					{block:RebloggedFrom}<span class="subpostinfo originlink">From: <a class=" greyhover" href="{ReblogParentURL}">{ReblogParentName}</a></span> {/block:RebloggedFrom}
+				</div>
+				{PostNotes}
+			</div>
+			{/block:Posts}
+			</ol>
+		</div>
+		<div id="footer">
+			<div class="center foot">
+				{block:PreviousPage} <span id="prevpage" class="nextprev">
+				<a href="{PreviousPage}" class="greyhover" style="font-size:2em;">&#9664;</a>
+			</span>{/block:PreviousPage}
+
+			{block:NextPage}<span class="nextprev">
+				<a href="{NextPage}" class="greyhover" style="font-size:2em;">&#9654;</a>
+			</span>{/block:NextPage}
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
